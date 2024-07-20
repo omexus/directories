@@ -63,10 +63,10 @@ namespace DirectoryTree
         //remove the folder from the source
         DeleteFolder(fullPath);
 
-        var (targetFolder, message2) = FindFolder(pathTo);
+        var (targetFolder, toMessage) = FindFolder(pathTo);
         if (targetFolder == null)
         {
-            Console.WriteLine(message2);
+            Console.WriteLine(toMessage);
             return null;
         }
 
@@ -113,6 +113,8 @@ namespace DirectoryTree
 
     private static (Folder? folder, string message) FindFolder(string path)
     {
+        if(path == "/") return (_root, "");
+
         var folderParts = path.Split("/");
 
         if (folderParts.Length == 1)

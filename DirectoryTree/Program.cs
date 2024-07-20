@@ -7,6 +7,7 @@ string? command;
 while ((command = Console.ReadLine()) != "x")
 {
     CommandService.ExecuteCommand(command);
+    Console.WriteLine("'x' + <enter> to quit");
 }
 
 Console.WriteLine("Goodbye!");
