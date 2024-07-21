@@ -1,9 +1,9 @@
-namespace DirectoryTree
-{
-    /// <summary>
-    /// Service to handle folder operations
-    /// </summary>
-    public class FolderService
+namespace DirectoryTree;
+
+/// <summary>
+/// Service to handle folder operations
+/// </summary>
+public class FolderService
 {
     //root folder (invisible) holds the reference to everything underneath
     private static readonly Folder _root = new("/");
@@ -53,6 +53,7 @@ namespace DirectoryTree
     /// <returns>Moved folder</returns>
     public static Folder? MoveFolder(string fullPath, string pathTo)
     {
+        //get the folder to move (we want the reference so that it brings the children along)
         var (sourceFolder, message) = FindFolder(fullPath);
         if (sourceFolder == null)
         {
@@ -89,14 +90,14 @@ namespace DirectoryTree
         if (parts.Length == 1)
         {
             parentFolder = _root;
-            message = $"{fullPath} dpes not exist";
+            message = $"{fullPath} does not exist"; //in case is needed
         }
         else    //find parent folder
         {
             //get the parent folder path only
             string? parentPath = string.Join("/", parts[..^1]);
             //find parent folder
-            (parentFolder, message) = FindFolder(parentPath);           
+            (parentFolder, message) = FindFolder(parentPath);
         }
 
         //remove folder from parent 
@@ -113,7 +114,7 @@ namespace DirectoryTree
 
     private static (Folder? folder, string message) FindFolder(string path)
     {
-        if(path == "/") return (_root, "");
+        if (path == "/") return (_root, "");
 
         var folderParts = path.Split("/");
 
@@ -156,4 +157,3 @@ namespace DirectoryTree
     }
 }
 
-}
