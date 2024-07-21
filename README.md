@@ -5,9 +5,17 @@ Directories is a C# CLI program to create 'virtual' directories, i.e. it support
 
 ## Installation / Run
 
-clone this repository
+1. Clone this repository
 
-Go to 'Packages' folder and choose the zip file depending of your system (osx-arm64.zip). Unzip it, this will give you an executable named:
+2. Go to 'Packages' folder and choose the zip file depending of your system. There are six to choose from
+- linux-arm64.zip
+- linux-x64.zip
+- osx-arm64.zip
+- osx-x64.zip
+- win-arm64.exe.zip
+- win-x64.exe.zip
+
+3. Unzip it, this will give you an executable file named:
 ```bash
 DirectoryTree
 ```
@@ -15,6 +23,7 @@ DirectoryTree
 ## Sample Run
 
 ```
+vscode ➜ /workspaces/directories/Packages/./DirectoryTree
 Welcome to the Directory Tree!
 Enter 'x' to quit
 
