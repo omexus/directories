@@ -53,6 +53,7 @@ namespace DirectoryTree
             {
                 Console.WriteLine($"{item.Key} - {item.Value.Description} - {item.Value.syntax}");
             }
+            Console.WriteLine("'x' + <enter> to quit");
             return false;
         }
     }
